@@ -74,6 +74,11 @@
                         <RowDefinition Height="10" />
                         <RowDefinition Height="1*" />
                     </Grid.RowDefinitions>
+
+                    <Image Source="/Resoucers/Images/question.png" />
+                    <TextBlock Grid.Row="2" TextAlignment="Center" Text="Надежный"/>
+                    <Button Grid.Row="4" Content="Генерация"/>
+
                 </Grid>
             </Grid>
         </GroupBox>
