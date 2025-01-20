@@ -7,60 +7,85 @@
         mc:Ignorable="d"
         Title="Генератор паролей" Height="600" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*" />
-                <RowDefinition Height="10" />
-                <RowDefinition Height="1*" />
-            </Grid.RowDefinitions>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
 
-            <GroupBox>
+        <GroupBox Header="Настройки пароля" BorderBrush="Black">
+            <Grid ShowGridLines="True">
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width=".5*"/>
+                </Grid.ColumnDefinitions>
+
                 <Grid ShowGridLines="True">
-                    <Grid.ColumnDefinitions >
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="10"/>
-                        <ColumnDefinition Width=".5*"/>
-                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="10" />
+                    </Grid.RowDefinitions>
 
-                    <Grid ShowGridLines="True">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="1*" />
-                            <RowDefinition Height="10" />
-                            <RowDefinition Height="1*" />
-                            <RowDefinition Height="10" />
-                            <RowDefinition Height="1*" />
-                            <RowDefinition Height="10" />
-                            <RowDefinition Height="1*" />
-                            <RowDefinition Height="10" />
-                            <RowDefinition Height="1*" />
-                            <RowDefinition Height="10" />
-                            <RowDefinition Height="1*" />
-                            <RowDefinition Height="10" />
-                            <RowDefinition Height="1*" />
-                            <RowDefinition Height="10" />
-                        </Grid.RowDefinitions>
-                    </Grid>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Длина пароля"/>
+                        <Separator Width="10" Height="0"/>
+                        <Slider Minimum="3" Maximum="32" Width="100"/>
+                        <Separator Width="10" Height="0"/>
+                        <TextBox  Width="30" />
+                    </StackPanel>
 
-                    <Grid ShowGridLines="True" Grid.Column="2">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="1*" />
-                            <RowDefinition Height="10" />
-                            <RowDefinition Height="1*" />
-                            <RowDefinition Height="10" />
-                            <RowDefinition Height="1*" />
-                        </Grid.RowDefinitions>
-                    </Grid>
+                    <CheckBox Grid.Row="2" Content="Цифры"/>
+                    <CheckBox Grid.Row="4" Content="Символы"/>
+                    <CheckBox Grid.Row="6" Content="Верхний регистр"/>
+                    <CheckBox Grid.Row="8" Content="Нижний регистр"/>
+                    <CheckBox Grid.Row="10" Content="Слова"/>
+
+                    <StackPanel  Grid.Row="12" Orientation="Horizontal">
+                        <TextBlock   Text="Кол-во паролей"/>
+                        <Separator Width="10" Height="0"/>
+                        <TextBox Width="50" Height="20" />
+
+                    </StackPanel>
+
+
                 </Grid>
-            </GroupBox>
-            
-            <!--#region  Список паролей-->
-            <ListBox Grid.Row="2">
-                
-            </ListBox>
-            <!--#endregion-->
-            
-        </Grid>
-    
+
+
+
+                <Grid ShowGridLines="True" Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                </Grid>
+            </Grid>
+        </GroupBox>
+
+        <!--#region  Список паролей-->
+        <ListBox Grid.Row="2">
+
+        </ListBox>
+        <!--#endregion-->
+
+    </Grid>
+
 
 
 </Window>
