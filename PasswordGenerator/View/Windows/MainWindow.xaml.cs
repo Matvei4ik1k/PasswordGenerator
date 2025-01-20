@@ -9,8 +9,6 @@ namespace PasswordGenerator
     {
         public MainWindow()
         {
-
-
             InitializeComponent();
         }
     }
