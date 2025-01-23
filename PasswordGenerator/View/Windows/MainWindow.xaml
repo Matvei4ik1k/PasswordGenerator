@@ -15,14 +15,14 @@
         </Grid.RowDefinitions>
 
         <GroupBox Header="Настройки пароля" BorderBrush="Black">
-            <Grid ShowGridLines="True">
+            <Grid ShowGridLines="False">
                 <Grid.ColumnDefinitions >
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="10"/>
                     <ColumnDefinition Width=".5*"/>
                 </Grid.ColumnDefinitions>
 
-                <Grid ShowGridLines="True">
+                <Grid ShowGridLines="False">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*" />
                         <RowDefinition Height="10" />
@@ -45,7 +45,7 @@
                         <Separator Width="10" Height="0"/>
                         <Slider Minimum="3" Maximum="32" Width="100"/>
                         <Separator Width="10" Height="0"/>
-                        <TextBox  Width="30" />
+                        <TextBox Name="PasswordLengthTb"  Width="30" />
                     </StackPanel>
 
                     <CheckBox Grid.Row="2" Content="Цифры"/>
@@ -54,16 +54,12 @@
                     <CheckBox Grid.Row="8" Content="Нижний регистр"/>
                     <CheckBox Grid.Row="10" Content="Слова"/>
 
-                    <StackPanel  Grid.Row="12" Orientation="Horizontal">
+                    <StackPanel  Grid.Row="12" Orientation="Horizontal" Height="27" VerticalAlignment="Top">
                         <TextBlock   Text="Кол-во паролей"/>
                         <Separator Width="10" Height="0"/>
                         <TextBox Width="50" Height="20" />
-
                     </StackPanel>
-
-
                 </Grid>
-
 
 
                 <Grid ShowGridLines="True" Grid.Column="2">
@@ -77,14 +73,14 @@
 
                     <Image Source="/Resoucers/Images/question.png" />
                     <TextBlock Grid.Row="2" TextAlignment="Center" Text="Надежный"/>
-                    <Button Grid.Row="4" Content="Генерация"/>
+                    <Button Name="GenerateBtn" Grid.Row="4" Content="Генерация" Click="GenerateBtn_Click"/>
 
                 </Grid>
             </Grid>
         </GroupBox>
 
         <!--#region  Список паролей-->
-        <ListBox Grid.Row="2">
+        <ListBox Name="PasswordsLb" Grid.Row="2">
 
         </ListBox>
         <!--#endregion-->
