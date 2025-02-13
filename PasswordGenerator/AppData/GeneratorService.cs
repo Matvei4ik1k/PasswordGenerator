@@ -10,15 +10,37 @@ namespace PasswordGenerator.AppData
         private readonly string _simbols = "!@#$%^&*()-_+";
         private readonly string _lowerCharacters = "qwertyuiopasdfghjklzxcvbnm";
         private readonly string _upperCharacters = "QWERTYUIOPASDFGHJKLZXCVBNM";
+        public int count = 0;
+
         private readonly List<string> _patterns;
         public GenerationService(bool useNumbers, bool useSymbols, bool useLower, bool useUpper, bool useWords)
         {
             _patterns = new List<string>();
-            if (useNumbers) _patterns.Add(_numbers);
-            if (useSymbols) _patterns.Add(_simbols);
-            if (useLower) _patterns.Add(_lowerCharacters);
-            if (useUpper) _patterns.Add(_upperCharacters);
-            if (useWords) _patterns.Add(_numbers);
+            if (useNumbers)
+            {
+                _patterns.Add(_numbers);
+                count++;
+            }
+            if (useSymbols)
+            {
+                _patterns.Add(_simbols);
+                count++;
+            }
+            if (useLower)
+            {
+                _patterns.Add(_lowerCharacters);
+                count++;
+            }
+            if (useUpper)
+            {
+                count++;
+                _patterns.Add(_upperCharacters);
+            }
+            if (useWords)
+            {
+                count++;
+                _patterns.Add(_numbers);
+            }
         }
 
         public List<string> Start(int length, int passwordsCount)
