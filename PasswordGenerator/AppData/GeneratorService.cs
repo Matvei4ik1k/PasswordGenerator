@@ -10,6 +10,7 @@ namespace PasswordGenerator.AppData
         private readonly string _simbols = "!@#$%^&*()-_+";
         private readonly string _lowerCharacters = "qwertyuiopasdfghjklzxcvbnm";
         private readonly string _upperCharacters = "QWERTYUIOPASDFGHJKLZXCVBNM";
+        private readonly string[] _words = new string[] { "Кот", "Ёж", "Лес" };
         public int count = 0;
 
         private readonly List<string> _patterns;
@@ -38,8 +39,8 @@ namespace PasswordGenerator.AppData
             }
             if (useWords)
             {
+                _patterns.Add(_words);
                 count++;
-                _patterns.Add(_numbers);
             }
         }
 
@@ -52,9 +53,11 @@ namespace PasswordGenerator.AppData
                 string password = string.Empty;
                 while (password.Length < length)
                 {
+                    int words = _random.Next(0, _words.Length);
+
                     int patternIndex = _random.Next(0, _patterns.Count);
                     int charIndexFromPattern = _random.Next(0, _patterns[patternIndex].Length);
-                    password += _patterns[patternIndex][charIndexFromPattern];
+                    password += _patterns[patternIndex][words];
                 }
                 passwordSets.Add(password);
             }
