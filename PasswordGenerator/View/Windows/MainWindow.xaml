@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PasswordGenerator"
         mc:Ignorable="d"
-        Title="Генератор паролей" Height="600" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Генератор паролей" Height="700" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
-    <Grid>
+    <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
             <RowDefinition Height="10" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
 
-        <GroupBox Header="Настройки пароля" BorderBrush="Black">
+        <GroupBox Header="Настройки пароля" BorderBrush="Black" Padding="20">
             <Grid ShowGridLines="False">
                 <Grid.ColumnDefinitions >
                     <ColumnDefinition Width="1*"/>
@@ -47,7 +47,7 @@
                         <Separator Width="10" Height="0"/>
                         <TextBox Name="PasswordLengthTb"  Width="30" Text="{Binding ElementName=PasswordLenghtSl, Path=Value, StringFormat={}{0:F0}}" />
                     </StackPanel>
-
+                    
                     <CheckBox Name="NumbersCb" Grid.Row="2" Content="Цифры"  />
                     <CheckBox Name="SymbolsCb" Grid.Row="4" Content="Символы"/>
                     <CheckBox Name="UpperCaseCb" Grid.Row="6" Content="Верхний регистр"/>
@@ -80,7 +80,8 @@
         </GroupBox>
 
         <!--#region  Список паролей-->
-        <ListBox Name="PasswordsLb" Grid.Row="2">
+        <ListBox Name="PasswordsLb" Grid.Row="2"
+                 SelectionChanged="PasswordsLb_SelectionChanged">
 
         </ListBox>
         <!--#endregion-->

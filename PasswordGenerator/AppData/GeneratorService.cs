@@ -37,11 +37,6 @@ namespace PasswordGenerator.AppData
                 count++;
                 _patterns.Add(_upperCharacters);
             }
-            if (useWords)
-            {
-                _patterns.Add(_words);
-                count++;
-            }
         }
 
         public List<string> Start(int length, int passwordsCount)
@@ -57,8 +52,9 @@ namespace PasswordGenerator.AppData
 
                     int patternIndex = _random.Next(0, _patterns.Count);
                     int charIndexFromPattern = _random.Next(0, _patterns[patternIndex].Length);
-                    password += _patterns[patternIndex][words];
+                    password += _patterns[patternIndex][charIndexFromPattern];
                 }
+                password = password.Insert(0, _words[0]);
                 passwordSets.Add(password);
             }
             return passwordSets;
