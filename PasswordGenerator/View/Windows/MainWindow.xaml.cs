@@ -52,5 +52,10 @@ namespace PasswordGenerator
                     MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
+        private void PasswordLengthTb_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
     }
 }

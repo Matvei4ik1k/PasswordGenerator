@@ -45,9 +45,9 @@
                         <Separator Width="10" Height="0"/>
                         <Slider Name="PasswordLenghtSl" Minimum="3" Maximum="32" Width="100" />
                         <Separator Width="10" Height="0"/>
-                        <TextBox Name="PasswordLengthTb"  Width="30" Text="{Binding ElementName=PasswordLenghtSl, Path=Value, StringFormat={}{0:F0}}" />
+                        <TextBox Name="PasswordLengthTb" TextAlignment="Center" Width="30" Text="{Binding ElementName=PasswordLenghtSl, Path=Value, StringFormat={}{0:F0}}" TextChanged="PasswordLengthTb_TextChanged" />
                     </StackPanel>
-                    
+
                     <CheckBox Name="NumbersCb" Grid.Row="2" Content="Цифры"  />
                     <CheckBox Name="SymbolsCb" Grid.Row="4" Content="Символы"/>
                     <CheckBox Name="UpperCaseCb" Grid.Row="6" Content="Верхний регистр"/>
@@ -72,8 +72,12 @@
                     </Grid.RowDefinitions>
 
                     <Image Source="/Resoucers/Images/question.png" />
-                    <TextBlock Grid.Row="2" TextAlignment="Center" Text="Надежный" Name="ReliabilityTb"/>
-                    <Button Name="GenerateBtn" Grid.Row="4" Content="Генерация" Click="GenerateBtn_Click"/>
+                    <TextBlock Grid.Row="2" TextAlignment="Center" Text="Надежный" Name="ReliabilityTb" VerticalAlignment="Center" />
+
+                    <Border CornerRadius="10" Grid.Row="4" Width="160" Height="50" Background="LightBlue" >
+                        
+                        <Button Name="GenerateBtn" Width="150" Height="50" Background="LightBlue" BorderBrush="Transparent" Content="Генерация" Click="GenerateBtn_Click"/>
+                    </Border>
 
                 </Grid>
             </Grid>
