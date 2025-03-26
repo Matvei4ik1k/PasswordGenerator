@@ -54,7 +54,7 @@ namespace PasswordGenerator.AppData
                     int charIndexFromPattern = _random.Next(0, _patterns[patternIndex].Length);
                     password += _patterns[patternIndex][charIndexFromPattern];
                 }
-                password = password.Insert(0, _words[0]);
+                password = password.Insert(_random.Next(password.Length), _words[_random.Next(0, 3)]);
                 passwordSets.Add(password);
             }
             return passwordSets;

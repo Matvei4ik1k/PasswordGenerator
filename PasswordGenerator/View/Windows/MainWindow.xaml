@@ -19,24 +19,24 @@
                 <Grid.ColumnDefinitions >
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="10"/>
-                    <ColumnDefinition Width=".5*"/>
+                    <ColumnDefinition Width="0.6*"/>
                 </Grid.ColumnDefinitions>
 
                 <Grid ShowGridLines="False">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="1*" />
+                        <RowDefinition />
                         <RowDefinition Height="10" />
-                        <RowDefinition Height="1*" />
+                        <RowDefinition />
                         <RowDefinition Height="10" />
-                        <RowDefinition Height="1*" />
+                        <RowDefinition />
                         <RowDefinition Height="10" />
-                        <RowDefinition Height="1*" />
+                        <RowDefinition />
                         <RowDefinition Height="10" />
-                        <RowDefinition Height="1*" />
+                        <RowDefinition />
                         <RowDefinition Height="10" />
-                        <RowDefinition Height="1*" />
+                        <RowDefinition />
                         <RowDefinition Height="10" />
-                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="40" />
                         <RowDefinition Height="10" />
                     </Grid.RowDefinitions>
 
@@ -54,10 +54,10 @@
                     <CheckBox Name="LowerCaseCb" Grid.Row="8" Content="Нижний регистр"/>
                     <CheckBox Name="WordsCb" Grid.Row="10" Content="Слова"/>
 
-                    <StackPanel  Grid.Row="12" Orientation="Horizontal" Height="27" VerticalAlignment="Top">
-                        <TextBlock   Text="Кол-во паролей"/>
+                    <StackPanel  Grid.Row="12" Orientation="Horizontal" Height="20" VerticalAlignment="Top">
+                        <TextBlock VerticalAlignment="Center"  Text="Кол-во паролей"/>
                         <Separator Width="10" Height="0"/>
-                        <TextBox Width="50" Height="20" Name="PasswordsCountTb"/>
+                        <TextBox TextAlignment="Center" VerticalAlignment="Center" Width="50" Height="20" Name="PasswordsCountTb"/>
                     </StackPanel>
                 </Grid>
 
@@ -75,7 +75,7 @@
                     <TextBlock Grid.Row="2" TextAlignment="Center" Text="Надежный" Name="ReliabilityTb" VerticalAlignment="Center" />
 
                     <Border CornerRadius="10" Grid.Row="4" Width="160" Height="50" Background="LightBlue" >
-                        
+
                         <Button Name="GenerateBtn" Width="150" Height="50" Background="LightBlue" BorderBrush="Transparent" Content="Генерация" Click="GenerateBtn_Click"/>
                     </Border>
 
